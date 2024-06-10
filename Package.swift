@@ -15,13 +15,13 @@ let package = Package(
     products: [
         .library(
             name: "lz4",
-            targets: ["SystemLibs"]
+            targets: ["lz4Libs"]
         ),
     ],
 
     targets: [
         .target(
-            name: "SystemLibs",
+            name: "lz4Libs",
             dependencies: [
                 .target(name: "lz4", condition: .when(platforms: [.macOS, .linux])),
                 .target(name: "lz4ios", condition: .when(platforms: [.iOS])),
